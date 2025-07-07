@@ -13,4 +13,5 @@
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "nvidia-smi-plus.refresh.autoRefresh": true,
 }
