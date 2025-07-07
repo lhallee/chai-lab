@@ -1,3 +1,5 @@
+# sudo docker build -t chai .
+# sudo docker run 
 FROM ubuntu:22.04 AS chailab-baseimage
 
 ENV \
