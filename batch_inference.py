@@ -100,7 +100,7 @@ def run_single_inference(seq1: str, seq2: str, idx: int, device: torch.device) -
             feature_context = make_all_atom_feature_context(
                 fasta_file=fasta_path,
                 output_dir=output_dir,
-                use_esm_embeddings=False,
+                use_esm_embeddings=True,
                 use_msa_server=False,
                 msa_directory=None,
                 constraint_path=None,
@@ -194,7 +194,7 @@ def process_csv(input_csv: str, output_csv: str, device: torch.device) -> None:
 def main():
     """Main function."""
     parser = argparse.ArgumentParser(description='Batch inference for Chai-1 dimers')
-    parser.add_argument('--input_csv', type=str, default='dimers.csv', help='Input CSV file with two columns for protein sequences')
+    parser.add_argument('--input_csv', type=str, default='example_dimers.csv', help='Input CSV file with two columns for protein sequences')
     parser.add_argument('--output_csv', type=str, default='results.csv', help='Output CSV file for results')
     args = parser.parse_args()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
